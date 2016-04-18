@@ -141,4 +141,4 @@ outDetec <- function(data, bench = c("b1","b2","b3","b4"), plot = c("no","yes"))
  
 }  
 
-outDetec(wine, "b3", "no")
+
