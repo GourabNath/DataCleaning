@@ -1,5 +1,19 @@
-#Outlier Detection
-#outDetec() function
+##Outlier Detection
+##outDetec() function
+##The following function will hehp in detecting the presence of outliers in each of the numerical variables of a dataset given a specific
+##benchmark. I have used four benchmarks (BM) while constructing this function. They are:
+##b1 - Based on quartile and interquartile range. (Upper BM, Lower BM) = (Q1 - 1.5*IQR, Q3 + 1.5*IQR)
+##b2 - Based on mean and sd. (Upper BM, Lower BM) = (mean - 2*sd, mean + 2*sd)
+##b3 - Based on mean and sd. (Upper BM, Lower BM) = (mean - 2.5*sd, mean + 2.5*sd)
+##b4 - Based on mean and sd. (Upper BM, Lower BM) = (mean - 3*sd, mean + 3*sd)
+##
+##The function takes three arguments - 
+##data - the data frame of interest
+##bench - the benchmark
+##plot - takes the value yes/no. if specified yes it will return the boxplot of the variables containing outliers
+##
+##The function returns a [ncol(data) x 1] matrix with its row names as the name of variables of the data set with its values indicating
+##the presence of outliers.
 
 outDetec <- function(data, bench = c("b1","b2","b3","b4"), plot = c("no","yes"))
 {
